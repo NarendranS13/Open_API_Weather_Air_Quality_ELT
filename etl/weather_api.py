@@ -116,3 +116,5 @@ def air_pollution_data(city):
     else:
         print("Error", response.status_code, response.text)
         return None
+    
+
