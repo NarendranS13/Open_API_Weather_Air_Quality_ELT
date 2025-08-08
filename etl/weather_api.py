@@ -24,7 +24,7 @@ def get_coordinates(city):
         if data:
             lat = data[0]["lat"]
             lon = data[0]["lon"]
-            print(f"Coordinates: lat={lat}, lon={lon}")
+            # print(f"Coordinates: lat={lat}, lon={lon}")
             return lat, lon
 
         else:
