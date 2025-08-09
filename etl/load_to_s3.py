@@ -3,7 +3,7 @@ import boto3
 from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 import glob
-
+from config import OUTPUT_DIR
 
 def load_to_s3():
 
