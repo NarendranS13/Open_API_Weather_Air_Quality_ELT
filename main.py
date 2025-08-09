@@ -1,4 +1,5 @@
 from etl.weather_api import weather_api,air_pollution_data
+from etl.load_to_s3 import load_to_s3
 from etl.constants import CITY_LIST
 from config import OUTPUT_DIR
 import os
@@ -33,8 +34,8 @@ def main():
 
     ## Create the file paths in Output DIR
 
-    weather_path = os.path.join(OUTPUT_DIR, f"weather_data_{today}")
-    air_quality_path = os.path.join(OUTPUT_DIR, f"air_quality_data_{today}")
+    weather_path = os.path.join(OUTPUT_DIR, f"weather_data_{today}.json")
+    air_quality_path = os.path.join(OUTPUT_DIR, f"air_quality_data_{today}.json")
 
     ## Save the output in JSON
     with open(weather_path, "w") as wf:
@@ -45,6 +46,7 @@ def main():
 
     ### Loading the data into s3
     
+    load_to_s3()
 
 
 
