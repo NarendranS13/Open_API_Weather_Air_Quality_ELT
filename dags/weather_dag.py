@@ -10,7 +10,7 @@ default_args = {
     "depends_on_past": False,
     "email_on_failure": False,
     "email_on_retry": False,
-    "retries": 1,
+    "retries": 0,
     "retry_delay": timedelta(minutes=5)
 
 }
@@ -27,6 +27,7 @@ with DAG(
     schedule_interval = "@daily",
     start_date = datetime(2025, 1, 1),
     catchup = False,
+    max_active_runs= 1,
     tags = ["weather","ETL"],
 
 )as dag:
