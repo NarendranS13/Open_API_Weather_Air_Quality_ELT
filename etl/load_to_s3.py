@@ -13,10 +13,12 @@ def load_to_s3():
     output_dir = os.path.join(os.path.dirname(__file__),"..","output")
 
     ## Import all AWS Information to create boto session for S3 Upload.
-    AWS_PROFILE = os.getenv("AWS_PROFILE")
     S3_BUCKET = os.getenv("S3_BUCKET")
     S3_WEATHER_FOLDER = os.getenv("S3_WEATHER_FOLDER")
     S3_AIR_QUALITY_FOLDER = os.getenv("S3_AIR_QUALITY_FOLDER")
+    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+    AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION")
 
     ### Find the latest file in the Output Directory
     weather_files = sorted(glob.glob(os.path.join(output_dir,"weather_data_*.json")), reverse = True)
@@ -31,7 +33,20 @@ def load_to_s3():
 
     try:
         
-        session = boto3.Session(profile_name = AWS_PROFILE)
+        # session = boto3.Session(profile_name = AWS_PROFILE)
+
+        # s3 = session.client("s3",
+        # aws_access_key_id = AWS_ACCESS_KEY_ID,
+        # aws_secret_access_key = AWS_SECRET_KEY,
+        # region_name = AWS_REGION
+        # )
+
+        session = boto3.Session(
+            aws_access_key_id = AWS_ACCESS_KEY_ID,
+            aws_secret_access_key = AWS_SECRET_ACCESS_KEY,
+            region_name = AWS_DEFAULT_REGION
+        )
+
         s3 = session.client("s3")
 
         ### Upload the Weather data
