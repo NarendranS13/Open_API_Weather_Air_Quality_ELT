@@ -1,3 +1,5 @@
 .env
 etl_run.bat
 wsl_venv/
+__pycache__/
+weather_api_project/
