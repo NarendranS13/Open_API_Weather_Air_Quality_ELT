@@ -1,3 +1,7 @@
+# 🧠 Author
+Narendran S
+[LinkedIN](https://www.linkedin.com/in/narendrans1999/) | [Github](https://github.com/NarendranS13)
+
 # OpenWeather API ELT Project
 Developed and ELT project using the OpenWeather API to extract data for weather and air pollution for the 10 Indian Cities.
 
