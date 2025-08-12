@@ -75,3 +75,10 @@ airflow webserver --port 8080
 
 Note: Always start the scheduler and then webserver.
 
+
+## Airflow Screenshot on local Debian WSL
+<img width="1903" height="917" alt="image" src="https://github.com/user-attachments/assets/06abbacb-de9a-4315-9f72-7218ef3f11ab" />
+
+## S3 Upload Successful
+<img width="1877" height="796" alt="image" src="https://github.com/user-attachments/assets/58dd06b1-f06e-4596-9c6f-9e629281ebcb" />
+
