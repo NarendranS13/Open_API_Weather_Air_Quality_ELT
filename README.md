@@ -39,4 +39,33 @@ S3_FOLDER = s3_folder
 ``` terminal
 Python main.py
 ```
-~~
+## Setting up Airlfow on the Local WSL Linux (Debian)
+
+```bash
+sudo apt install python3 python3-venv python3-pip -y
+python -m venv airflow_venv
+source airflow_venv/bin/activate
+AIRFLOW_VERSION=2.9.3
+PYTHON_VERSION="$(python --version | cut -d ' ' -f 2 | cut -d '.' -f 1,2)"
+CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+```
+
+Note: The Above Airflow will utilize the sqlite DB which is only useful for local testing. 
+
+## Setting up the Airlfow (Within the virtual env)
+```bash
+export AIRFLOW_HOME=~/airflow
+airflow db init
+airflow users create --username admin --firstname Admin --lastname User --role Admin --email
+admin@example.com --password admin
+```
+
+## Running the Airflow
+``` bash
+airlfow scheduler
+airflow webserver --port 8080
+```
+
+Note: Always start the scheduler and then webserver.
+```
