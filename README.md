@@ -14,28 +14,29 @@ Implemented Agnostic Folder creation output for storing Data temporarily.
 4. For .env aws parameters, use the same parameters as recommended in the AWS boto3 docs.
 
 ## Activating the environment in windows & Linux
-~~ terminal
+``` terminal
 git clone https://github.com/NarendranS13/Open_API_Weather_Air_Quality_ELT
 cd Open_API_Weather_Air_Quality_ELT
-~~
+```
 
-~~ terminal
+``` terminal
 python -m venv _virtual_env_name_
 _virtual_env_name_/Scripts/activate
 pip install -r requirements.txt
-~~
+```
 
-~~ .env
+``` .env
 OPENWEATHER_API_KEY = open_weather_api_key
 AWS_ACCESS_KEY_ID = aws_access_key
 AWS_SECRET_ACCESS_KEY = aws_secret_access_key
 AWS_DEFAULT_REGION = aws_region
 S3_BUCKET = s3_bucket
 S3_FOLDER = s3_folder
-~~
+```
 
 ## To run the Script on Local Terminal (Windows)
 
-~~ terminal
+``` terminal
 Python main.py
+```
 ~~
