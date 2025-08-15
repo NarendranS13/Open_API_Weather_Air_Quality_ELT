@@ -4,9 +4,14 @@ from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 import glob
 from config import OUTPUT_DIR
+import logging
+
+# Get the logger for this instance
+logger = logging.getLogger(__name__)
 
 def load_to_s3():
 
+    logger.info("Load to S3 Module started")
     load_dotenv()
 
     ### Create an relative reference to output dir
@@ -26,6 +31,7 @@ def load_to_s3():
 
     if not weather_files or not air_quality_files:
         print("❌ No Output files found to Upload.")
+        logger.WARNING("No Output file present")
         return 
 
     weather_data_file = weather_files[0]
@@ -58,9 +64,11 @@ def load_to_s3():
         s3.upload_file(Filename = air_quality_data_file , Bucket = S3_BUCKET , Key = air_s3_key )
 
         print("✅ Upload Successfull")
+        logger.info("S3 UPLOAD Succesfull")
 
     except ClientError as error:
         print("❌ Upload Failed: {error}")
+        logger.CRITICAL(f"Failed to upload the files to S3: {error}")
 
     return None
 

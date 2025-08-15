@@ -6,12 +6,33 @@ import os
 from datetime import datetime
 import json
 from zoneinfo import ZoneInfo
+import logging
+
+### setting up an log file path
+log_directory = "logs"
+log_filename = "app.log"
+log_filepath = os.path.join(log_directory, log_filename)
+
+if not os.path.exists(log_directory):
+    os.makedirs(log_directory)
+
+### Configure the basic logging
+logging.basicConfig(
+    filename = log_filepath,
+    level = logging.INFO,
+    format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+
+# Create a logger instance for main.py
+logger = logging.getLogger(__name__)
 
 ### Create the ouptut Dir
 
 os.makedirs(OUTPUT_DIR, exist_ok = True)
+logger.info("Output Directory created/present")
 
 def main():
+    logger.info("Starting the main data pipeline.")
     all_city_weather_data = []
     all_city_air_data = []
     for city in CITY_LIST:
@@ -49,7 +70,7 @@ def main():
     load_to_s3()
 
 
-
+    logging.info("Main data pipeline finished successfully")
 
 
 
