@@ -1,6 +1,12 @@
 import requests
 import os
 from dotenv import load_dotenv
+import logging
+
+
+## Get the instance of this module logger
+
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
@@ -20,6 +26,7 @@ def get_coordinates(city):
     response = requests.get(url, params=params)
 
     if response.status_code == 200:
+        logger.info(f"API is accessable")
         data = response.json()
         if data:
             lat = data[0]["lat"]
@@ -28,6 +35,7 @@ def get_coordinates(city):
             return lat, lon
 
         else:
+            logger.info("API not accessable")
             print("No data found for city")
 
     return None, None
@@ -74,11 +82,13 @@ def weather_api(city):
             "wind_gust": data['wind']['gust'],
 
         }
+        logger.info("City level weather data extracted")
 
         return city_weather
     
     else:
         print("Error", response.status_code, response.text)
+        logger.CRITICAL(f"Response not found:{response.status_code} and {response.text}")
         return None
 
 def air_pollution_data(city):
@@ -110,11 +120,13 @@ def air_pollution_data(city):
             "pm2_5": data['list'][0]['components']['pm2_5'],
             "pm10": data['list'][0]['components']['pm10']
         }
+        logger.info("Air quality data available")
 
         return city_air_quality_data
     
     else:
         print("Error", response.status_code, response.text)
+        logger.CRITICAL(f"Response not available: {response.status_code} and {response.text}")
         return None
     
 
