@@ -9,3 +9,4 @@ airflow_test.pem
 logs/
 config/
 plugins/
+logs/
