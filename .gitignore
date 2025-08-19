@@ -4,3 +4,8 @@ wsl_venv/
 __pycache__/
 weather_api_project/
 output/
+airflow_ssh.ppk
+airflow_test.pem
+logs/
+config/
+plugins/
