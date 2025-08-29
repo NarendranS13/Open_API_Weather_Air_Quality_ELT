@@ -1,0 +1,45 @@
+2025-08-21 22:13:05,531 - __main__ - INFO - Data Directory created/present
+2025-08-21 22:13:05,531 - __main__ - INFO - Starting the main data pipeline.
+2025-08-21 22:13:05,794 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:05,957 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:06,025 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:06,276 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:06,519 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:06,631 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:06,703 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:06,809 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:07,046 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:07,166 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:07,236 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:07,317 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:07,556 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:07,722 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:07,797 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:08,044 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:08,278 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:08,394 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:08,468 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:08,546 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:08,784 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:08,895 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:08,968 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:09,033 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:09,286 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:09,406 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:09,476 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:09,717 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:09,956 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:10,073 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:10,143 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:10,428 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:10,674 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:10,783 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:10,850 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:11,105 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:11,342 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:11,445 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-21 22:13:11,512 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-21 22:13:11,748 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-21 22:13:11,809 - scripts.elt_jobs.load_to_s3 - INFO - Load to S3 Module started
+2025-08-21 22:13:13,040 - scripts.elt_jobs.load_to_s3 - INFO - S3 UPLOAD Succesfull
+2025-08-21 22:13:13,043 - root - INFO - Main data pipeline finished successfully
