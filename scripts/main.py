@@ -1,35 +1,44 @@
-from etl.weather_api import weather_api,air_pollution_data
-from etl.load_to_s3 import load_to_s3
-from etl.constants import CITY_LIST
-from config import OUTPUT_DIR
+from .elt_jobs.weather_api import weather_api,air_pollution_data
+from .elt_jobs.load_to_s3 import load_to_s3
+from .elt_jobs.constants import CITY_LIST
+from .config import LOG_DIR, DATA_DIR
 import os
 from datetime import datetime
 import json
 from zoneinfo import ZoneInfo
 import logging
+import sys
 
 ### setting up an log file path
-log_directory = "logs"
-log_filename = "app.log"
-log_filepath = os.path.join(log_directory, log_filename)
+### Create app.log with timestamp
+current_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-if not os.path.exists(log_directory):
-    os.makedirs(log_directory)
+### Create the log filename
+log_filename = f"app_{current_timestamp}.log"
+log_filepath = os.path.join(LOG_DIR, log_filename)
+
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
 
 ### Configure the basic logging
 logging.basicConfig(
-    filename = log_filepath,
+    # filename = log_filepath,
     level = logging.INFO,
-    format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers = [
+        logging.FileHandler(log_filepath), #writes logs to local file
+        logging.StreamHandler(sys.stdout)  #writes the logs to AWS CloudWatch
+    ]
 )
 
 # Create a logger instance for main.py
 logger = logging.getLogger(__name__)
 
-### Create the ouptut Dir
+### Create the Data Dir to save extracted Data.
+os.makedirs(DATA_DIR, exist_ok = True)
 
-os.makedirs(OUTPUT_DIR, exist_ok = True)
-logger.info("Output Directory created/present")
+
+logger.info("Data Directory created/present")
 
 def main():
     logger.info("Starting the main data pipeline.")
@@ -55,8 +64,8 @@ def main():
 
     ## Create the file paths in Output DIR
 
-    weather_path = os.path.join(OUTPUT_DIR, f"weather_data_{today}.json")
-    air_quality_path = os.path.join(OUTPUT_DIR, f"air_quality_data_{today}.json")
+    weather_path = os.path.join(DATA_DIR, f"weather_data_{today}.json")
+    air_quality_path = os.path.join(DATA_DIR, f"air_quality_data_{today}.json")
 
     ## Save the output in JSON
     with open(weather_path, "w") as wf:

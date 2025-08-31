@@ -3,7 +3,7 @@ import tempfile
 import json
 import pytest
 from unittest.mock import patch, MagicMock
-from etl.load_to_s3 import load_to_s3
+from ..scripts.elt_jobs.load_to_s3 import load_to_s3
 
 @pytest.fixture
 def create_test_files(tmp_path):
@@ -33,7 +33,7 @@ def test_s3_upload_success(mock_boto, create_test_files, monkeypatch):
     mock_boto.return_value.client.return_value = mock_client
 
     # Point OUTPUT_DIR to our temp directory
-    monkeypatch.setattr("etl.load_to_s3.OUTPUT_DIR", str(create_test_files))
+    monkeypatch.setattr("etl.load_to_s3.DATA_DIR", str(create_test_files))
 
     load_to_s3()
 

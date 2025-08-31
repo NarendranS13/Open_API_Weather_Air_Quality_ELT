@@ -8,7 +8,11 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-load_dotenv()
+if os.path.exists("/opt/airflow/project-env/.env"):
+    load_dotenv(dotenv_path = "/opt/airflow/project-env/.env")
+
+else:
+    load_dotenv()
 
 def get_coordinates(city):
     print(f"Getting coordinates for: {city}")
@@ -88,7 +92,7 @@ def weather_api(city):
     
     else:
         print("Error", response.status_code, response.text)
-        logger.CRITICAL(f"Response not found:{response.status_code} and {response.text}")
+        logger.critical(f"Response not found:{response.status_code} and {response.text}")
         return None
 
 def air_pollution_data(city):
@@ -126,7 +130,7 @@ def air_pollution_data(city):
     
     else:
         print("Error", response.status_code, response.text)
-        logger.CRITICAL(f"Response not available: {response.status_code} and {response.text}")
+        logger.critical(f"Response not available: {response.status_code} and {response.text}")
         return None
     
 

@@ -3,7 +3,7 @@ import boto3
 from botocore.exceptions import ClientError
 from dotenv import load_dotenv
 import glob
-from config import OUTPUT_DIR
+from ..config import DATA_DIR
 import logging
 
 # Get the logger for this instance
@@ -12,10 +12,13 @@ logger = logging.getLogger(__name__)
 def load_to_s3():
 
     logger.info("Load to S3 Module started")
-    load_dotenv()
+    if os.path.exists("/opt/airflow/project-env/.env"):
+        load_dotenv(dotenv_path = "/opt/airflow/project-env/.env")
+    else:
+        load_dotenv()
 
-    ### Create an relative reference to output dir
-    output_dir = os.path.join(os.path.dirname(__file__),"..","output")
+    # ### Create an relative reference to output dir
+    # output_dir = os.path.join(os.path.dirname(__file__),"..","output")
 
     ## Import all AWS Information to create boto session for S3 Upload.
     S3_BUCKET = os.getenv("S3_BUCKET")
@@ -23,35 +26,33 @@ def load_to_s3():
     S3_AIR_QUALITY_FOLDER = os.getenv("S3_AIR_QUALITY_FOLDER")
     AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-    AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION")
+    AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION","ap-south-1")
 
     ### Find the latest file in the Output Directory
-    weather_files = sorted(glob.glob(os.path.join(output_dir,"weather_data_*.json")), reverse = True)
-    air_quality_files = sorted(glob.glob(os.path.join(output_dir,"air_quality_data_*.json")), reverse = True)
+    weather_files = sorted(glob.glob(os.path.join(DATA_DIR,"weather_data_*.json")), reverse = True)
+    air_quality_files = sorted(glob.glob(os.path.join(DATA_DIR,"air_quality_data_*.json")), reverse = True)
 
     if not weather_files or not air_quality_files:
         print("❌ No Output files found to Upload.")
-        logger.WARNING("No Output file present")
+        logger.warning("No Output file present")
         return 
 
     weather_data_file = weather_files[0]
     air_quality_data_file = air_quality_files[0]
 
     try:
-        
-        # session = boto3.Session(profile_name = AWS_PROFILE)
+        # Dual Mode: Use Env credentials on Local system, otherwise use IAM Role (ECS)
+        if AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY:
+            logger.info("Using AWS credentials from environment variables")
+            session = boto3.Session(
+                aws_access_key_id = AWS_ACCESS_KEY_ID,
+                aws_secret_access_key = AWS_SECRET_ACCESS_KEY,
+                region_name = AWS_DEFAULT_REGION
+                )
+        else:
+            logger.info("Using IAM role (ECS/EC2) for authentication")
+            session = boto3.Session(region_name = AWS_DEFAULT_REGION)
 
-        # s3 = session.client("s3",
-        # aws_access_key_id = AWS_ACCESS_KEY_ID,
-        # aws_secret_access_key = AWS_SECRET_KEY,
-        # region_name = AWS_REGION
-        # )
-
-        session = boto3.Session(
-            aws_access_key_id = AWS_ACCESS_KEY_ID,
-            aws_secret_access_key = AWS_SECRET_ACCESS_KEY,
-            region_name = AWS_DEFAULT_REGION
-        )
 
         s3 = session.client("s3")
 
@@ -68,7 +69,7 @@ def load_to_s3():
 
     except ClientError as error:
         print("❌ Upload Failed: {error}")
-        logger.CRITICAL(f"Failed to upload the files to S3: {error}")
+        logger.critical(f"Failed to upload the files to S3: {error}")
 
     return None
 
