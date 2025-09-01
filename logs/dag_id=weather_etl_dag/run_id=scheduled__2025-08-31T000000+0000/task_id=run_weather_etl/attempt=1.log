@@ -1,0 +1,69 @@
+{"timestamp":"2025-08-31T16:46:23.094674","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-08-31T16:46:23.103084","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/weather_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-08-31T16:46:24.384216","level":"info","event":"Data Directory created/present","logger":"scripts.main"}
+{"timestamp":"2025-08-31T16:46:24.951555","level":"info","event":"Starting the main data pipeline.","logger":"scripts.main"}
+{"timestamp":"2025-08-31T16:46:24.954401Z","level":"info","event":"Getting coordinates for: Delhi","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:26.316701","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:27.519986","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:27.552327Z","level":"info","event":"Getting coordinates for: Delhi","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:27.765237","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:28.078962","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:28.099067Z","level":"info","event":"Getting coordinates for: Mumbai","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:28.485761","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:28.765972","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:28.800430Z","level":"info","event":"Getting coordinates for: Mumbai","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:28.904671","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:29.042550","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:29.053990Z","level":"info","event":"Getting coordinates for: Chennai","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:29.425770","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:29.568982","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:29.569723Z","level":"info","event":"Getting coordinates for: Chennai","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:29.676801","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:29.763099","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:29.764064Z","level":"info","event":"Getting coordinates for: Kolkata","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:30.053864","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:30.247143","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:30.248217Z","level":"info","event":"Getting coordinates for: Kolkata","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:30.368411","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:30.659729","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:30.662857Z","level":"info","event":"Getting coordinates for: Bangalore","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:30.952217","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:31.103452","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:31.104363Z","level":"info","event":"Getting coordinates for: Bangalore","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:31.198017","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:31.298888","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:31.299767Z","level":"info","event":"Getting coordinates for: Hyderabad","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:31.578740","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:31.737351","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:31.738129Z","level":"info","event":"Getting coordinates for: Hyderabad","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:31.840602","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:31.929878","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:31.935178Z","level":"info","event":"Getting coordinates for: Ahmedabad","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:32.199877","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:32.398440","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:32.416519Z","level":"info","event":"Getting coordinates for: Ahmedabad","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:32.538472","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:32.679729","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:32.692084Z","level":"info","event":"Getting coordinates for: Pune","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:33.006760","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:33.277795","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:33.641278Z","level":"info","event":"Getting coordinates for: Pune","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:33.880227","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:34.367555","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:34.397295Z","level":"info","event":"Getting coordinates for: Jaipur","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:34.817137","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:34.948811","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:34.950186Z","level":"info","event":"Getting coordinates for: Jaipur","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:35.061590","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:35.431945","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:35.445397Z","level":"info","event":"Getting coordinates for: Lucknow","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:36.767670","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:37.478339","level":"info","event":"City level weather data extracted","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:37.498853Z","level":"info","event":"Getting coordinates for: Lucknow","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:46:38.529634","level":"info","event":"API is accessable","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:39.415043","level":"info","event":"Air quality data available","logger":"scripts.elt_jobs.weather_api"}
+{"timestamp":"2025-08-31T16:46:40.465515","level":"info","event":"Load to S3 Module started","logger":"scripts.elt_jobs.load_to_s3"}
+{"timestamp":"2025-08-31T16:47:00.760884Z","level":"info","event":"✅ Upload Successfull","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T16:47:00.758011","level":"info","event":"S3 UPLOAD Succesfull","logger":"scripts.elt_jobs.load_to_s3"}
+{"timestamp":"2025-08-31T16:47:00.775516","level":"info","event":"Main data pipeline finished successfully","logger":"root"}
+{"timestamp":"2025-08-31T16:47:00.788509","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

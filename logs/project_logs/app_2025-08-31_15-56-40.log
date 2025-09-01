@@ -1,0 +1,46 @@
+2025-08-31 15:56:40,778 - __main__ - INFO - Data Directory created/present
+2025-08-31 15:56:40,779 - __main__ - INFO - Starting the main data pipeline.
+2025-08-31 15:56:41,079 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:41,203 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:41,278 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:41,705 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:41,965 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:42,112 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:42,195 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:42,267 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:42,513 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:42,631 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:42,706 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:42,955 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:43,218 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:43,335 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:43,417 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:43,672 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:43,929 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:44,058 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:44,150 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:44,439 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:44,726 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:44,845 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:44,927 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:45,233 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:45,571 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:45,705 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:45,786 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:46,062 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:46,320 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:46,437 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:46,534 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:46,825 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:47,104 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:47,257 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:47,359 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:47,619 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:47,877 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:48,003 - scripts.elt_jobs.weather_api - INFO - City level weather data extracted
+2025-08-31 15:56:48,079 - scripts.elt_jobs.weather_api - INFO - API is accessable
+2025-08-31 15:56:48,334 - scripts.elt_jobs.weather_api - INFO - Air quality data available
+2025-08-31 15:56:48,387 - scripts.elt_jobs.load_to_s3 - INFO - Load to S3 Module started
+2025-08-31 15:56:48,405 - scripts.elt_jobs.load_to_s3 - INFO - Using AWS credentials from environment variables
+2025-08-31 15:56:48,988 - scripts.elt_jobs.load_to_s3 - INFO - S3 UPLOAD Succesfull
+2025-08-31 15:56:48,990 - root - INFO - Main data pipeline finished successfully

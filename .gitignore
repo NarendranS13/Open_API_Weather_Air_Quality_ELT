@@ -1,1 +1,3 @@
 .env
+__pycache__
+weather_elt_venv/

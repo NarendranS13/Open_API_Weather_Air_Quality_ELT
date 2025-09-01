@@ -1,0 +1,122 @@
+[
+    {
+        "city": "Delhi",
+        "aqi": 2,
+        "carbon_monoxide": 569.29,
+        "nitrogen_monoxide": 0.02,
+        "nitrogen_dioxide": 15.26,
+        "ozone": 17.81,
+        "sulphur_dioxide": 1.13,
+        "ammonia": 2.39,
+        "pm2_5": 22.7,
+        "pm10": 25.86
+    },
+    {
+        "city": "Mumbai",
+        "aqi": 1,
+        "carbon_monoxide": 71.17,
+        "nitrogen_monoxide": 0,
+        "nitrogen_dioxide": 0.11,
+        "ozone": 31.48,
+        "sulphur_dioxide": 0.22,
+        "ammonia": 0,
+        "pm2_5": 6.5,
+        "pm10": 11.33
+    },
+    {
+        "city": "Chennai",
+        "aqi": 2,
+        "carbon_monoxide": 291.51,
+        "nitrogen_monoxide": 0.07,
+        "nitrogen_dioxide": 18.05,
+        "ozone": 13.72,
+        "sulphur_dioxide": 8.81,
+        "ammonia": 9.28,
+        "pm2_5": 13.46,
+        "pm10": 19.14
+    },
+    {
+        "city": "Kolkata",
+        "aqi": 1,
+        "carbon_monoxide": 125.28,
+        "nitrogen_monoxide": 0,
+        "nitrogen_dioxide": 0.48,
+        "ozone": 59.19,
+        "sulphur_dioxide": 0.36,
+        "ammonia": 0.59,
+        "pm2_5": 9.4,
+        "pm10": 11.1
+    },
+    {
+        "city": "Bangalore",
+        "aqi": 1,
+        "carbon_monoxide": 148.08,
+        "nitrogen_monoxide": 0.04,
+        "nitrogen_dioxide": 5.27,
+        "ozone": 16.87,
+        "sulphur_dioxide": 1.01,
+        "ammonia": 2.46,
+        "pm2_5": 2.84,
+        "pm10": 5.22
+    },
+    {
+        "city": "Hyderabad",
+        "aqi": 1,
+        "carbon_monoxide": 131.74,
+        "nitrogen_monoxide": 0,
+        "nitrogen_dioxide": 7.89,
+        "ozone": 26.13,
+        "sulphur_dioxide": 7.86,
+        "ammonia": 1.73,
+        "pm2_5": 2.74,
+        "pm10": 4.23
+    },
+    {
+        "city": "Ahmedabad",
+        "aqi": 1,
+        "carbon_monoxide": 125.33,
+        "nitrogen_monoxide": 0,
+        "nitrogen_dioxide": 3.54,
+        "ozone": 24.29,
+        "sulphur_dioxide": 1.25,
+        "ammonia": 0.3,
+        "pm2_5": 7.41,
+        "pm10": 13.23
+    },
+    {
+        "city": "Pune",
+        "aqi": 1,
+        "carbon_monoxide": 72.86,
+        "nitrogen_monoxide": 0,
+        "nitrogen_dioxide": 0.3,
+        "ozone": 30.66,
+        "sulphur_dioxide": 0.19,
+        "ammonia": 0.18,
+        "pm2_5": 5.12,
+        "pm10": 7.64
+    },
+    {
+        "city": "Jaipur",
+        "aqi": 1,
+        "carbon_monoxide": 215.45,
+        "nitrogen_monoxide": 0,
+        "nitrogen_dioxide": 6.1,
+        "ozone": 28.52,
+        "sulphur_dioxide": 0.53,
+        "ammonia": 2.04,
+        "pm2_5": 4.29,
+        "pm10": 5.79
+    },
+    {
+        "city": "Lucknow",
+        "aqi": 2,
+        "carbon_monoxide": 518.27,
+        "nitrogen_monoxide": 0.1,
+        "nitrogen_dioxide": 16.15,
+        "ozone": 12.41,
+        "sulphur_dioxide": 2.34,
+        "ammonia": 8.51,
+        "pm2_5": 16.41,
+        "pm10": 21.32
+    }
+]
