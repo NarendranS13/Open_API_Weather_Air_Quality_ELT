@@ -66,25 +66,29 @@ def weather_api(city):
     if response.status_code == 200:
         data = response.json()
 
+        coord = data.get("coord", {})
+        main = data.get("main", {})
+        sys = data.get("sys", {})
+        wind = data.get("wind", {})
+
         city_weather = {
             "city_name": city,
-            "lat": data['coord']['lat'],
-            "lon": data['coord']['lon'],
-            "time_captured": data['dt'],
-            "temp": data['main']['temp'],
-            "feels_like": data['main']['feels_like'],
-            "temp_min": data['main']['temp_min'],
-            "temp_max": data['main']['temp_max'],
-            "pressure": data['main']['pressure'],
-            "humidity": data['main']['humidity'],
-            "sea_level": data['main'].get('sea_level'),
-            "grnd_level": data['main'].get('grnd_level'),
-            "sunrise": data['sys']['sunrise'],
-            "sunset": data['sys']['sunset'],
-            "wind_speed": data['wind']['speed'],
-            "wind_degree": data['wind']['deg'],
-            "wind_gust": data['wind']['gust'],
-
+            "lat": coord.get("lat"),
+            "lon": coord.get("lon"),
+            "time_captured": data.get("dt"),
+            "temp": main.get("temp"),
+            "feels_like": main.get("feels_like"),
+            "temp_min": main.get("temp_min"),
+            "temp_max": main.get("temp_max"),
+            "pressure": main.get("pressure"),
+            "humidity": main.get("humidity"),
+            "sea_level": main.get("sea_level"),    # optional
+            "grnd_level": main.get("grnd_level"),  # optional
+            "sunrise": sys.get("sunrise"),
+            "sunset": sys.get("sunset"),
+            "wind_speed": wind.get("speed"),
+            "wind_degree": wind.get("deg"),
+            "wind_gust": wind.get("gust"),  # may be None if missing
         }
         logger.info("City level weather data extracted")
 
@@ -112,21 +116,41 @@ def air_pollution_data(city):
 
     if response.status_code == 200:
         data = response.json()
-        city_air_quality_data = {
-            "city": city,
-            "aqi": data['list'][0]['main']['aqi'],
-            "carbon_monoxide": data['list'][0]['components']['co'],
-            "nitrogen_monoxide": data['list'][0]['components']['no'],
-            "nitrogen_dioxide": data['list'][0]['components']['no2'],
-            "ozone": data['list'][0]['components']['o3'],
-            "sulphur_dioxide": data['list'][0]['components']['so2'],
-            "ammonia": data['list'][0]['components']['nh3'],
-            "pm2_5": data['list'][0]['components']['pm2_5'],
-            "pm10": data['list'][0]['components']['pm10']
-        }
-        logger.info("Air quality data available")
+        records = data.get("list") or []
+        if not records:
+            logger.warning("No 'list' in AQ response for city=%s: %s", city, json.dumps(data))
+            city_air_quality_data = {
+                "city": city,
+                "aqi": None,
+                "carbon_monoxide": None,
+                "nitrogen_monoxide": None,
+                "nitrogen_dioxide": None,
+                "ozone": None,
+                "sulphur_dioxide": None,
+                "ammonia": None,
+                "pm2_5": None,
+                "pm10": None
+            }
+        else:
+            record = records[0] or {}
+            main = record.get("main", {})
+            comps = record.get("components", {})
 
-        return city_air_quality_data
+            city_air_quality_data = {
+                "city": city,
+                "aqi": main.get("aqi"),
+                "carbon_monoxide": comps.get("co"),
+                "nitrogen_monoxide": comps.get("no"),
+                "nitrogen_dioxide": comps.get("no2"),
+                "ozone": comps.get("o3"),
+                "sulphur_dioxide": comps.get("so2"),
+                "ammonia": comps.get("nh3"),
+                "pm2_5": comps.get("pm2_5"),
+                "pm10": comps.get("pm10")
+            }
+            logger.info("Air quality data available")
+
+            return city_air_quality_data
     
     else:
         print("Error", response.status_code, response.text)
