@@ -118,7 +118,6 @@ def air_pollution_data(city):
         data = response.json()
         records = data.get("list") or []
         if not records:
-            logger.warning("No 'list' in AQ response for city=%s: %s", city, json.dumps(data))
             city_air_quality_data = {
                 "city": city,
                 "aqi": None,
